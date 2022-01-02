@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head></head>
+
+<body style="background-color: cadetblue; text-align: center;">
+    <h2>Registration Form</h2>
+    <form id=form1>
+        <label>First Name</label>
+        <input type="text" name="name" placeholder="First Name" required minlength="10" pattern="[a-Z]" />
+    </form>
+</br>
+    <form>
+
+        <label>Last Name</label>
+        <input type="text" name="name" placeholder="Last Name" required minlength="10" pattern="[a-Z]" />
+    </form>
+</br>
+    <form>
+
+        <label>Email Id</label>
+        <input type="Email" name="Email" pattern=".+@gmail.com" />
+    </form>
+</br>
+    <form>
+    <label>Contact Number</label>
+    <input type="text" name="Contact number" required pattern="[o-9]" minlength="10" maxlength="10" />
+    </form>
+</br>
+    <form>
+        <p> Gender
+            <input type="radio" name="gender"/> 
+            <label>MALE</label>
+            <input type="radio" name="gender"/>
+            <label>FEMALE</label>
+        </p>
+    </form>
+</br>
+<form>
+    <label>City</label>
+    <input type="text" name="City" placeholder="City" required minlength="10" pattern="[a-Z]" />
+</form>
+</br>
+<form>
+    <label>State</label>
+    <input type="text" name="State" placeholder="State" required minlength="10" pattern="[a-Z]" />
+</form>
+</br>
+<form>
+    <label>Country</label>
+    <input type="text" name="Country" placeholder="Country" required minlength="10" pattern="[a-Z]" />
+</form>
+</br>
+<form style="text-align: center;">
+<button onclick="getFormData()">Submit</button>
+</form>
+<script>
+    var jsonData={}
+    var form= document.getElementsByTagName("form");    
+        let getFormData=()=>{
+        event.preventDefault() 
+        let formData= new FormData(form[0])            
+            formData.forEach(function(value, key)
+            {
+                jsonData[key] = value;
+            });
+            console.log(JSON.stringify(jsonData))
+            alert("Json Data Printed in The Console Please Check The Console")
+    }
+</script>
+</body>
+
+</html>
